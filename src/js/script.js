@@ -1,3 +1,4 @@
+//  активация меню элемента
 const headerMenuItem = document.querySelectorAll(".header__nav-item-link");
 for (let i = 0; i < headerMenuItem.length; i++) {
   headerMenuItem[i].addEventListener("click", function () {
