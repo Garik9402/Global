@@ -189,4 +189,26 @@
   position: absolute;
   right: 3px;
   transform: translateY(6%);
+}
+.hero__users {
+  display: block;
+}
+.hero__users-icons {
+  position: relative;
+}
+.hero__user-icon {
+  position: absolute;
+  top: 0;
+}
+.hero__user-icon:first-child {
+  left: 0px;
+  z-index: 4;
+}
+.hero__user-icon:nth-child(2) {
+  left: 20px;
+  z-index: 3;
+}
+.hero__user-icon:last-child {
+  left: 42px;
+  z-index: 2;
 }/*# sourceMappingURL=styles.css.map */
