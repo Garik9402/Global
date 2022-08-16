@@ -2,11 +2,15 @@
 @import "mixin.scss";
 @import "reset.scss";
 
-.wrapper {}
+.wrapper {
+   width: 100%;
+   min-height: 757px;
+   background-color: #ECF7F3;
+}
 
 .header {
    width: 100%;
-   padding: 30px 0px;
+   padding: 30px 0px 42px 0px;
    background: #ecf7f3;
 
    &__inner {
@@ -106,6 +110,7 @@
    width: 100%;
    background: #ecf7f3;
    padding-bottom: 44px;
+   padding: 42px 0px 44px 0px;
 
    &__inner {
       max-width: 1143px;
@@ -241,17 +246,36 @@
    &__items-right {
       position: relative;
       max-width: 450px;
-      width: 1005px;
+      width: 100%;
    }
 
    &__img {
-      position: relative;
-      top: 20px;
-      left: -170px;
+      position: absolute;
+      top: 43px;
+      left: -190px;
+      z-index: 1;
    }
 
-   &__carousel {}
+   &__carousel {
+      position: relative;
+      max-width: 450px;
+      height: 450px;
+      width: 100%;
+      border: 2px solid #E8E8E8;
+      border-radius: 50%;
+      bottom: 0px;
+      left: 0;
 
-   &__green-circle {}
+   }
+
+   &__green-circle {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: #48B774;
+      border-radius: 50%;
+      top: 117px;
+      left: 90px;
+   }
 
 }
