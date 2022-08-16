@@ -105,6 +105,7 @@
 .hero {
    width: 100%;
    background: #ecf7f3;
+   padding-bottom: 44px;
 
    &__inner {
       max-width: 1143px;
@@ -112,9 +113,10 @@
       padding: 0 15px;
       margin: 0 auto;
       display: flex;
+      justify-content: space-between;
    }
 
-   &__items-column {
+   &__items-left {
       max-width: 597px;
       width: 100%;
    }
@@ -125,6 +127,7 @@
       font-size: 48px;
       line-height: 65px;
       color: #2d2d2d;
+      margin-bottom: 22px;
    }
 
    &__text {
@@ -133,11 +136,17 @@
       font-size: 15px;
       line-height: 26px;
       color: #7c7c7c;
+      margin-bottom: 30px;
+   }
+
+   &__button {
+      margin-bottom: 50px;
    }
 
    &__search-w {
       width: 100%;
       position: relative;
+      margin-bottom: 40px;
    }
 
    &__search {
@@ -179,12 +188,11 @@
    &__users-icons {
       position: relative;
       display: flex;
-      width: 93px;
+      width: 100px;
    }
 
    &__user-icon {
       position: relative;
-      display: inline-block;
       top: 0;
 
       &:first-child {
@@ -193,12 +201,12 @@
       }
 
       &:nth-child(2) {
-         left: -23px;
+         left: -19px;
          z-index: 3;
       }
 
       &:nth-child(3) {
-         left: -43px;
+         left: -35px;
          z-index: 2;
       }
 
@@ -213,12 +221,37 @@
       border-radius: 50%;
       display: flex;
       padding: 6px;
-      left: -58px;
+      left: -50px;
       z-index: 1;
    }
 
    &__users-statistics {
       margin-left: 12px;
-
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #707070;
    }
+
+   &__users-statistics-color-orange {
+      color: #FF8345;
+   }
+
+   &__items-right {
+      position: relative;
+      max-width: 450px;
+      width: 1005px;
+   }
+
+   &__img {
+      position: relative;
+      top: 20px;
+      left: -170px;
+   }
+
+   &__carousel {}
+
+   &__green-circle {}
+
 }

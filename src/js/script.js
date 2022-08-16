@@ -14,15 +14,17 @@ for (let i = 0; i < headerMenuItem.length; i++) {
  const simvolsNode = /['!','@','#','$','%','^','&','*','(',')']/g;
 const promptTextNode = 'Недопустимый символ для ввода'
  searchNode.oninput = function(){
-  if (this.value.match(simvolsNode)){
+   this.value = this.value.slice(0, 12) 
+  if (this.value.match(simvolsNode)) {
    this.value = this.value.replace(simvolsNode, '') 
    promptNode.innerHTML = promptTextNode
 }
-else{
+ else{
    promptNode.innerHTML = '';
+ }
 }
 
- }
- 
+
+
 
 
