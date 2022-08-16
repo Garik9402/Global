@@ -175,6 +175,7 @@
   border-radius: 100px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .hero__search::-moz-placeholder {
   font-family: "Roboto", sans-serif;
@@ -263,9 +264,9 @@
 }
 .hero__img {
   position: absolute;
-  top: 43px;
+  top: 42px;
   left: -190px;
-  z-index: 1;
+  z-index: 2;
 }
 .hero__carousel {
   position: relative;
@@ -285,4 +286,62 @@
   border-radius: 50%;
   top: 117px;
   left: 90px;
+  z-index: 1;
+}
+.hero__flag {
+  z-index: 5;
+}
+
+.flag-britain {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  -webkit-animation-name: britain;
+          animation-name: britain;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes india__small {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: -40px;
+    top: 40px;
+  }
+}
+
+@keyframes india__small {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: -40px;
+    top: 40px;
+  }
+}
+@-webkit-keyframes britain {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: -40px;
+    top: 40px;
+  }
+}
+@keyframes britain {
+  0% {
+    left: 30%;
+  }
+  100% {
+    left: -40px;
+    top: 40px;
+  }
 }/*# sourceMappingURL=styles.css.map */
