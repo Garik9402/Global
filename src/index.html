@@ -10,6 +10,25 @@
 </head>
 
 <body>
+   <section class="m-menu">
+      <div class="m-menu__inner">
+         <nav class="nav">
+            <ul class="nav__list m-menu__nav-list">
+               <li class="nav__list-item m-menu__list-item">
+                  <a href="#" class="nav__item-link m-menu__list-item-link">Mobile Top Up</a>
+               </li>
+               <li class="nav__list-item m-menu__list-item">
+                  <a href="#" class="nav__item-link  m-menu__list-item-link">About</a>
+               </li>
+               <li class="nav__list-item m-menu__list-item">
+                  <a href="#" class="nav__item-link  m-menu__list-item-link">Rate</a>
+               </li>
+               <li class="nav__list-item m-menu__list-item">
+                  <a href="#" class="nav__item-link  m-menu__list-item-link">Help</a>
+               </li>
+            </ul>
+      </div>
+   </section>
    <div class="wrapper">
       <header class="header">
          <div class="header__inner">
@@ -17,23 +36,28 @@
                <img src="images/Logo.svg" alt="logo" class="logo" />
             </a>
             <div class="header__menu">
-               <nav class="nav">
-                  <ul class="nav__list header__nav-list">
-                     <li class="nav__list-item header__nav-item">
-                        <a href="#" class="nav__item-link header__nav-item-link header__nav-item-link--active">Mobile
-                           Top Up</a>
-                     </li>
-                     <li class="nav__list-item header__nav-item">
-                        <a href="#" class="nav__item-link header__nav-item-link">About</a>
-                     </li>
-                     <li class="nav__list-item header__nav-item">
-                        <a href="#" class="nav__item-link header__nav-item-link">Rate</a>
-                     </li>
-                     <li class="nav__list-item header__nav-item">
-                        <a href="#" class="nav__item-link header__nav-item-link">Help</a>
-                     </li>
-                  </ul>
-               </nav>
+               <div class="header__menu-items">
+                  <nav class="nav">
+                     <ul class="nav__list header__nav-list">
+                        <li class="nav__list-item header__nav-item">
+                           <a href="#" class="nav__item-link header__nav-item-link header__nav-item-link--active">Mobile
+                              Top Up</a>
+                        </li>
+                        <li class="nav__list-item header__nav-item">
+                           <a href="#" class="nav__item-link header__nav-item-link">About</a>
+                        </li>
+                        <li class="nav__list-item header__nav-item">
+                           <a href="#" class="nav__item-link header__nav-item-link">Rate</a>
+                        </li>
+                        <li class="nav__list-item header__nav-item">
+                           <a href="#" class="nav__item-link header__nav-item-link">Help</a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+               <div class="burger">
+                  <span class="burger__line-center"></span>
+               </div>
             </div>
             <a href="#" class="button">
                <span class="button__name">Sign Up</span>
@@ -49,9 +73,11 @@
                   We Make international calling simple, relible, and cheap
                   <br />basedon your unique calling behavior.
                </p>
-               <a href="#" class="button hero__button">
-                  <span class="button__name">Get Started</span>
-               </a>
+               <div class="hero__button-w">
+                  <a href="#" class="button hero__button">
+                     <span class="button__name">Get Started</span>
+                  </a>
+               </div>
                <div class="hero__search-w">
                   <input type="text" class="hero__search" id="search" placeholder="Where do you want to call?" />
                   <a href="#" class="hero__search-icon search-button">
@@ -86,13 +112,14 @@
             </div>
             <div class="hero__items-right">
                <img src="images/girl.png" alt="girl" class="hero__img">
+               <div class="hero__green-circle"></div>
                <div class="hero__carousel">
-                  <div class="hero__green-circle"></div>
                   <img src="images/Britain.svg" alt="Britain" class="hero__flag flag-britain">
-                  <img src="images/Italy.svg" alt="Italy" class="hero__flag flag-italy">
-                  <img src="images/india-big.svg" alt="india" class="hero__flag flag-india">
-                  <img src="images/india.svg" alt="india" class="hero__flag flag-india">
-                  <img src="images/india.svg" alt="india" class="hero__flag flag-india">
+                  <img src="images/Italy.svg" alt="Italy" class="hero__flag flag-italy-top">
+                  <img src="images/Italy.svg" alt="Italy" class="hero__flag flag-italy-bottom">
+                  <img src="images/india-big.svg" alt="india" class="hero__flag flag-india-big">
+                  <img src="images/india.svg" alt="india" class="hero__flag flag-india-small-right">
+                  <img src="images/india.svg" alt="india" class="hero__flag flag-india-small-left">
                </div>
 
             </div>

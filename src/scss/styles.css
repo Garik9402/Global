@@ -44,10 +44,27 @@
   box-sizing: border-box;
 }
 
+.m-menu {
+  width: 100%;
+}
+.m-menu__inner {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+.m-menu__nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.m-menu__list-item {
+  margin-top: 20px;
+}
 .wrapper {
   width: 100%;
   min-height: 757px;
   background-color: #ECF7F3;
+  overflow: hidden;
 }
 
 .header {
@@ -64,6 +81,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media only screen and (max-width: 766px) {
+  .header__menu-items {
+    display: none;
+  }
+}
 .header__nav-item {
   margin: 0px 20px;
 }
@@ -75,7 +97,11 @@
   line-height: 24px;
   color: #4a4a4a;
   text-decoration: none;
-  position: relative;
+}
+@media only screen and (max-width: 766px) {
+  .header__nav-item-link {
+    font-size: 14px;
+  }
 }
 .header__nav-item-link--active::before {
   content: "";
@@ -92,15 +118,56 @@
   display: flex;
   list-style: none;
 }
-.nav__item-link--active::before {
+.nav__item-link {
+  text-decoration: none;
+}
+.burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 766px) {
+  .burger {
+    display: block;
+  }
+}
+.burger::before, .burger::after {
   content: "";
   position: absolute;
-  min-width: 21px;
-  height: 1px;
-  background-color: #fb9b69;
-  bottom: -3px;
-  right: 50%;
-  transform: translateX(50%);
+  width: 100%;
+  height: 2px;
+  background-color: #48b774;
+}
+.burger::before {
+  top: 0;
+  left: 0;
+}
+.burger::after {
+  bottom: 0;
+  left: 0;
+}
+.burger__line-center {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #48b774;
+  top: 50%;
+  left: 0;
+}
+.burger--js-active::before {
+  transform: rotate(-315deg);
+  top: 48%;
+  transition: all 0.2s linear;
+}
+.burger--js-active::after {
+  transform: rotate(315deg);
+  bottom: 45%;
+  transition: all 0.2s linear;
+}
+.burger--js-active .burger__line-center {
+  transform: scale(0);
 }
 
 .button {
@@ -129,18 +196,31 @@
   background: #ecf7f3;
   padding-bottom: 44px;
   padding: 42px 0px 44px 0px;
+  min-height: 557px;
 }
 .hero__inner {
   max-width: 1143px;
   width: 100%;
+  min-height: 557px;
   padding: 0 15px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
+@media only screen and (max-width: 990px) {
+  .hero__inner {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .hero__items-left {
   max-width: 597px;
   width: 100%;
+}
+@media only screen and (max-width: 990px) {
+  .hero__items-left {
+    margin-bottom: 50px;
+  }
 }
 .hero__title {
   font-family: "Poppins", sans-serif;
@@ -150,6 +230,11 @@
   color: #2d2d2d;
   margin-bottom: 22px;
 }
+@media only screen and (max-width: 990px) {
+  .hero__title {
+    text-align: center;
+  }
+}
 .hero__text {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -158,8 +243,24 @@
   color: #7c7c7c;
   margin-bottom: 30px;
 }
+@media only screen and (max-width: 990px) {
+  .hero__text {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .hero__button-w {
+    display: flex;
+    justify-content: center;
+  }
+}
 .hero__button {
   margin-bottom: 50px;
+}
+@media only screen and (max-width: 990px) {
+  .hero__button {
+    text-align: center;
+  }
 }
 .hero__search-w {
   width: 100%;
@@ -175,7 +276,6 @@
   border-radius: 100px;
   outline: none;
   border: none;
-  cursor: pointer;
 }
 .hero__search::-moz-placeholder {
   font-family: "Roboto", sans-serif;
@@ -261,22 +361,46 @@
   position: relative;
   max-width: 450px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .hero__img {
   position: absolute;
   top: 42px;
-  left: -190px;
   z-index: 2;
+}
+@media only screen and (max-width: 574px) {
+  .hero__img {
+    max-width: 600px;
+  }
 }
 .hero__carousel {
   position: relative;
-  max-width: 450px;
+  width: 450px;
   height: 450px;
-  width: 100%;
   border: 2px solid #E8E8E8;
   border-radius: 50%;
   bottom: 0px;
   left: 0;
+  display: flex;
+  justify-content: center;
+  -webkit-animation-name: carousel;
+          animation-name: carousel;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@media only screen and (max-width: 574px) {
+  .hero__carousel {
+    max-width: 380px;
+    width: 100%;
+    height: 400px;
+  }
 }
 .hero__green-circle {
   position: absolute;
@@ -285,19 +409,20 @@
   background: #48B774;
   border-radius: 50%;
   top: 117px;
-  left: 90px;
   z-index: 1;
 }
-.hero__flag {
-  z-index: 5;
+@media only screen and (max-width: 574px) {
+  .hero__green-circle {
+    width: 200px;
+    height: 200px;
+  }
 }
-
-.flag-britain {
+.flag-india-small-left {
   position: absolute;
   left: 30%;
-  top: 30%;
-  -webkit-animation-name: britain;
-          animation-name: britain;
+  top: 40%;
+  -webkit-animation-name: india-small-left;
+          animation-name: india-small-left;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
   -webkit-animation-duration: 1s;
@@ -308,23 +433,103 @@
           animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes india__small {
+.flag-india-small-right {
+  position: absolute;
+  right: 30%;
+  top: 40%;
+  -webkit-animation-name: india-small-right;
+          animation-name: india-small-right;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.flag-britain {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  -webkit-animation-name: britain;
+          animation-name: britain;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.flag-italy-top {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  -webkit-animation-name: italy-top;
+          animation-name: italy-top;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.flag-italy-bottom {
+  position: absolute;
+  left: 40%;
+  bottom: 30%;
+  -webkit-animation-name: italy-bottom;
+          animation-name: italy-bottom;
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.flag-india-big {
+  position: absolute;
+  right: 20%;
+  top: 30%;
+  -webkit-animation-name: india-big;
+          animation-name: india-big;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes india-small-left {
   0% {
     left: 30%;
   }
   100% {
-    left: -40px;
-    top: 40px;
+    left: -45px;
+    top: 50%;
   }
 }
 
-@keyframes india__small {
+@keyframes india-small-left {
   0% {
     left: 30%;
   }
   100% {
-    left: -40px;
-    top: 40px;
+    left: -45px;
+    top: 50%;
   }
 }
 @-webkit-keyframes britain {
@@ -332,8 +537,8 @@
     left: 30%;
   }
   100% {
-    left: -40px;
-    top: 40px;
+    left: -28px;
+    top: 5%;
   }
 }
 @keyframes britain {
@@ -341,7 +546,95 @@
     left: 30%;
   }
   100% {
-    left: -40px;
-    top: 40px;
+    left: -28px;
+    top: 5%;
+  }
+}
+@-webkit-keyframes italy-top {
+  0% {
+    right: 28%;
+  }
+  100% {
+    right: 35%;
+    top: -50px;
+  }
+}
+@keyframes italy-top {
+  0% {
+    right: 28%;
+  }
+  100% {
+    right: 35%;
+    top: -50px;
+  }
+}
+@-webkit-keyframes india-big {
+  0% {
+    right: 30%;
+  }
+  100% {
+    right: -28px;
+    top: 8%;
+  }
+}
+@keyframes india-big {
+  0% {
+    right: 30%;
+  }
+  100% {
+    right: -28px;
+    top: 8%;
+  }
+}
+@-webkit-keyframes india-small-right {
+  0% {
+    right: 30%;
+  }
+  100% {
+    right: -50px;
+    top: 50%;
+  }
+}
+@keyframes india-small-right {
+  0% {
+    right: 30%;
+  }
+  100% {
+    right: -50px;
+    top: 50%;
+  }
+}
+@-webkit-keyframes italy-bottom {
+  0% {
+    right: 28%;
+  }
+  100% {
+    right: 35%;
+    bottom: -55px;
+  }
+}
+@keyframes italy-bottom {
+  0% {
+    right: 28%;
+  }
+  100% {
+    right: 35%;
+    bottom: -55px;
+  }
+}
+@-webkit-keyframes carousel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes carousel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=styles.css.map */
