@@ -199,10 +199,10 @@
   min-height: 557px;
 }
 .hero__inner {
-  max-width: 1143px;
+  max-width: 1173px;
   width: 100%;
   min-height: 557px;
-  padding: 0 15px;
+  padding: 0 30px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -371,7 +371,8 @@
 }
 @media only screen and (max-width: 574px) {
   .hero__img {
-    max-width: 600px;
+    width: 600px;
+    top: 70px;
   }
 }
 .hero__carousel {
@@ -535,18 +536,24 @@
 @-webkit-keyframes britain {
   0% {
     left: 30%;
+    transform: rotate(0deg);
   }
   100% {
     left: -28px;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
     top: 5%;
   }
 }
 @keyframes britain {
   0% {
     left: 30%;
+    transform: rotate(0deg);
   }
   100% {
     left: -28px;
+    -webkit-animation-delay: 3s;
+            animation-delay: 3s;
     top: 5%;
   }
 }
