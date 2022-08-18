@@ -62,7 +62,7 @@
 }
 .wrapper {
   width: 100%;
-  min-height: 757px;
+  min-height: 1000px;
   background-color: #ECF7F3;
   overflow: hidden;
 }
@@ -201,7 +201,7 @@
 .hero__inner {
   max-width: 1173px;
   width: 100%;
-  min-height: 557px;
+  min-height: 800px;
   padding: 0 30px;
   margin: 0 auto;
   display: flex;
@@ -230,9 +230,19 @@
   color: #2d2d2d;
   margin-bottom: 22px;
 }
+@media only screen and (max-width: 1040px) {
+  .hero__title {
+    font-size: 42px;
+  }
+}
 @media only screen and (max-width: 990px) {
   .hero__title {
     text-align: center;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .hero__title {
+    font-size: 38px;
   }
 }
 .hero__text {
@@ -246,6 +256,11 @@
 @media only screen and (max-width: 990px) {
   .hero__text {
     text-align: center;
+  }
+}
+@media only screen and (max-width: 574px) {
+  .hero__text {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -360,6 +375,7 @@
 .hero__items-right {
   position: relative;
   max-width: 450px;
+  height: 550px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -373,6 +389,12 @@
   .hero__img {
     width: 600px;
     top: 70px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__img {
+    top: 50px;
+    width: 400px;
   }
 }
 .hero__carousel {
@@ -396,11 +418,26 @@
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
+@media only screen and (max-width: 1040px) {
+  .hero__carousel {
+    width: 410px;
+  }
+}
+@media only screen and (max-width: 1040px) {
+  .hero__carousel {
+    width: 450px;
+  }
+}
 @media only screen and (max-width: 574px) {
   .hero__carousel {
-    max-width: 380px;
-    width: 100%;
-    height: 400px;
+    width: 320px;
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__carousel {
+    width: 250px;
+    height: 230px;
   }
 }
 .hero__green-circle {
@@ -414,8 +451,15 @@
 }
 @media only screen and (max-width: 574px) {
   .hero__green-circle {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__green-circle {
+    top: 80px;
+    width: 120px;
+    height: 120px;
   }
 }
 .flag-india-small-left {
@@ -536,7 +580,6 @@
 @-webkit-keyframes britain {
   0% {
     left: 30%;
-    transform: rotate(0deg);
   }
   100% {
     left: -28px;
@@ -548,13 +591,32 @@
 @keyframes britain {
   0% {
     left: 30%;
-    transform: rotate(0deg);
   }
   100% {
     left: -28px;
     -webkit-animation-delay: 3s;
             animation-delay: 3s;
     top: 5%;
+  }
+}
+@media only screen and (max-width: 574px) {
+  @-webkit-keyframes britain {
+    0% {
+      right: 30%;
+    }
+    100% {
+      left: -40px;
+      top: 5%;
+    }
+  }
+  @keyframes britain {
+    0% {
+      right: 30%;
+    }
+    100% {
+      left: -40px;
+      top: 5%;
+    }
   }
 }
 @-webkit-keyframes italy-top {
@@ -591,6 +653,26 @@
   100% {
     right: -28px;
     top: 8%;
+  }
+}
+@media only screen and (max-width: 574px) {
+  @-webkit-keyframes india-big {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -40px;
+      top: 8%;
+    }
+  }
+  @keyframes india-big {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -40px;
+      top: 8%;
+    }
   }
 }
 @-webkit-keyframes india-small-right {
