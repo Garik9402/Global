@@ -8,14 +8,36 @@
 // "xl": 992px,
 // "xxl": 1280px,
 
+body {
+   background: #ECF7F3;
+}
 
 .m-menu {
    width: 100%;
+   min-height: 0;
+   height: 0;
+   overflow: hidden;
+   position: absolute;
+
+   &--js-toggle {
+      position: absolute;
+      height: 100%;
+      min-height: 30px;
+      overflow: visible;
+      padding-top: 150px;
+      transition: all 0.1s linear;
+      background-color: bisque;
+
+      @include mq(sm) {
+         padding: 100px 0px;
+      }
+   }
 
    &__inner {
-      max-width: 500px;
+      max-width: 530px;
       width: 100%;
       margin: 0 auto;
+      padding: 0 15px;
    }
 
    &__nav-list {
@@ -25,18 +47,25 @@
    }
 
    &__list-item {
-      margin-top: 20px;
+      margin-top: 40px;
    }
 
-   &__list-item-link {}
+   &__list-item-link {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 65px;
+      color: #48B774;
+
+      @include mq(sm) {
+         font-size: 36px;
+      }
+   }
 
 
 }
 
-.wrapper {
-   width: 100%;
-   min-height: 1000px;
-   background-color: #ECF7F3;
+.wrapper-content {
    overflow: hidden;
 }
 
@@ -44,6 +73,12 @@
    width: 100%;
    padding: 30px 0px 42px 0px;
    background: #ecf7f3;
+   position: relative;
+   z-index: 2;
+
+   @include mq(sm) {
+      padding: 15px 0px 20px 0px;
+   }
 
    &__inner {
       max-width: 1143px;
@@ -53,6 +88,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @include mq(sm) {
+         padding: 0 10px;
+      }
    }
 
    &__logo-link {}
@@ -97,7 +136,11 @@
    }
 }
 
-.logo {}
+.logo {
+   @include mq(sm) {
+      width: 120px;
+   }
+}
 
 .nav {
    &__list {
@@ -116,15 +159,19 @@
 
 .burger {
    display: none;
+   position: relative;
+   width: 40px;
+   height: 30px;
+   cursor: pointer;
 
    @include mq(lg) {
       display: block;
    }
 
-   position: relative;
-   width: 40px;
-   height: 30px;
-   cursor: pointer;
+   @include mq(sm) {
+      width: 26px;
+      height: 22px;
+   }
 
    &::before,
    &::after {
@@ -164,6 +211,10 @@
       transform: rotate(315deg);
       bottom: 45%;
       transition: all 0.2s linear;
+
+      @include mq (sm) {
+         bottom: 42%;
+      }
    }
 
    &--js-active &__line-center {
@@ -182,12 +233,20 @@
       opacity: 0.7;
    }
 
+   @include mq(sm) {
+      padding: 6px 10px;
+   }
+
    &__name {
       font-family: "Poppins", sans-serif;
       font-weight: 500;
       font-size: 16px;
       line-height: 24px;
       color: #ffffff;
+
+      @include mq(sm) {
+         font-size: 14px;
+      }
    }
 
    &--active {
@@ -197,17 +256,31 @@
 
 }
 
+.wrapper-hero {
+   position: relative;
+   width: 100%;
+   background-color: #ECF7F3;
+   overflow: hidden;
+
+   &--js-toggle {
+      display: none;
+
+   }
+}
+
 .hero {
    width: 100%;
    background: #ecf7f3;
    padding-bottom: 44px;
    padding: 42px 0px 44px 0px;
-   min-height: 557px;
+
+   @include mq(sm) {
+      padding: 20px 0px;
+   }
 
    &__inner {
       max-width: 1173px;
       width: 100%;
-      min-height: 800px;
       padding: 0 30px;
       margin: 0 auto;
       display: flex;
@@ -246,7 +319,12 @@
       }
 
       @include mq(md) {
-         font-size: 38px;
+         font-size: 30px;
+         line-height: 40px;
+      }
+
+      @include mq (sm) {
+         font-size: 24px;
       }
    }
 
@@ -264,6 +342,11 @@
 
       @include mq(md) {
          font-size: 14px;
+      }
+
+      @include mq (sm) {
+         font-size: 10px;
+         line-height: 20px;
       }
    }
 
@@ -298,6 +381,10 @@
       outline: none;
       border: none;
 
+      @include mq (sm) {
+         padding: 0px 3px 0px 20px;
+      }
+
       &::placeholder {
          font-family: "Roboto", sans-serif;
          font-weight: 400;
@@ -305,6 +392,10 @@
          line-height: 19px;
          letter-spacing: 0.01em;
          color: #a2a2a2;
+
+         @include mq(sm) {
+            font-size: 12px;
+         }
       }
    }
 
@@ -384,6 +475,14 @@
       width: 100%;
       display: flex;
       justify-content: center;
+
+      @include mq (md) {
+         height: 437px;
+      }
+
+      @include mq (sm) {
+         height: 300px;
+      }
    }
 
    &__img {
@@ -483,13 +582,20 @@
 .flag-india-small-right {
    position: absolute;
    right: 30%;
-   top: 40%;
+   bottom: 10%;
    animation-name: india-small-right;
    animation-delay: 2s;
    animation-duration: 1s;
    animation-iteration-count: 1;
    animation-fill-mode: forwards;
+
+
+
+
 }
+
+
+
 
 .flag-britain {
    position: absolute;
@@ -506,23 +612,33 @@
 .flag-italy-top {
    position: absolute;
    left: 40%;
-   top: 30%;
+   top: 40%;
    animation-name: italy-top;
    animation-delay: 1.2s;
    animation-duration: 1s;
    animation-iteration-count: 1;
    animation-fill-mode: forwards;
+
+   @include mq (sm) {
+      left: 25%;
+   }
 }
 
 .flag-italy-bottom {
    position: absolute;
    left: 40%;
-   bottom: 30%;
+   bottom: 20%;
    animation-name: italy-bottom;
    animation-delay: 2.4s;
    animation-duration: 1s;
    animation-iteration-count: 1;
    animation-fill-mode: forwards;
+
+   @include mq (sm) {
+
+      left: 25%;
+   }
+
 }
 
 .flag-india-big {
@@ -544,8 +660,21 @@
    }
 
    100% {
-      left: -45px;
+      left: -40px;
       top: 50%;
+   }
+}
+
+@include mq (sm) {
+   @keyframes india-small-left {
+      0% {
+         left: 30%;
+      }
+
+      100% {
+         left: -30px;
+         top: 60%;
+      }
    }
 }
 
@@ -575,6 +704,20 @@
    }
 }
 
+@include mq (sm) {
+   @keyframes britain {
+      0% {
+         right: 30%;
+      }
+
+      100% {
+         left: -60px;
+         top: 5%;
+      }
+
+   }
+}
+
 
 @keyframes italy-top {
    0% {
@@ -594,7 +737,7 @@
 
    100% {
 
-      right: -28px;
+      right: -35px;
       top: 8%;
    }
 
@@ -614,6 +757,20 @@
    }
 }
 
+@include mq (sm) {
+   @keyframes india-big {
+      0% {
+         right: 30%;
+      }
+
+      100% {
+         right: -50px;
+         top: 8%;
+      }
+
+   }
+}
+
 @keyframes india-small-right {
    0% {
       right: 30%;
@@ -625,6 +782,19 @@
    }
 }
 
+@include mq (sm) {
+   @keyframes india-small-right {
+      0% {
+         right: 30%;
+      }
+
+      100% {
+         right: -30px;
+         top: 60%;
+      }
+   }
+}
+
 @keyframes italy-bottom {
    0% {
       right: 28%;
@@ -632,7 +802,18 @@
 
    100% {
       right: 35%;
-      bottom: -55px;
+      bottom: -15%;
+   }
+}
+
+@include mq (sm) {
+   @keyframes italy-bottom {
+      0% {}
+
+      100% {
+         bottom: -30%;
+      }
+
    }
 }
 

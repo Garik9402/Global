@@ -44,13 +44,36 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #ECF7F3;
+}
+
 .m-menu {
   width: 100%;
+  min-height: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.m-menu--js-toggle {
+  position: absolute;
+  height: 100%;
+  min-height: 30px;
+  overflow: visible;
+  padding-top: 150px;
+  transition: all 0.1s linear;
+  background-color: bisque;
+}
+@media only screen and (max-width: 373px) {
+  .m-menu--js-toggle {
+    padding: 100px 0px;
+  }
 }
 .m-menu__inner {
-  max-width: 500px;
+  max-width: 530px;
   width: 100%;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .m-menu__nav-list {
   display: flex;
@@ -58,12 +81,22 @@
   align-items: center;
 }
 .m-menu__list-item {
-  margin-top: 20px;
+  margin-top: 40px;
 }
-.wrapper {
-  width: 100%;
-  min-height: 1000px;
-  background-color: #ECF7F3;
+.m-menu__list-item-link {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: #48B774;
+}
+@media only screen and (max-width: 373px) {
+  .m-menu__list-item-link {
+    font-size: 36px;
+  }
+}
+
+.wrapper-content {
   overflow: hidden;
 }
 
@@ -71,6 +104,13 @@
   width: 100%;
   padding: 30px 0px 42px 0px;
   background: #ecf7f3;
+  position: relative;
+  z-index: 2;
+}
+@media only screen and (max-width: 373px) {
+  .header {
+    padding: 15px 0px 20px 0px;
+  }
 }
 .header__inner {
   max-width: 1143px;
@@ -80,6 +120,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 373px) {
+  .header__inner {
+    padding: 0 10px;
+  }
 }
 @media only screen and (max-width: 766px) {
   .header__menu-items {
@@ -114,6 +159,12 @@
   transform: translateX(50%);
 }
 
+@media only screen and (max-width: 373px) {
+  .logo {
+    width: 120px;
+  }
+}
+
 .nav__list {
   display: flex;
   list-style: none;
@@ -131,6 +182,12 @@
 @media only screen and (max-width: 766px) {
   .burger {
     display: block;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .burger {
+    width: 26px;
+    height: 22px;
   }
 }
 .burger::before, .burger::after {
@@ -166,6 +223,11 @@
   bottom: 45%;
   transition: all 0.2s linear;
 }
+@media only screen and (max-width: 373px) {
+  .burger--js-active::after {
+    bottom: 42%;
+  }
+}
 .burger--js-active .burger__line-center {
   transform: scale(0);
 }
@@ -180,6 +242,11 @@
 .button:hover {
   opacity: 0.7;
 }
+@media only screen and (max-width: 373px) {
+  .button {
+    padding: 6px 10px;
+  }
+}
 .button__name {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -187,8 +254,23 @@
   line-height: 24px;
   color: #ffffff;
 }
+@media only screen and (max-width: 373px) {
+  .button__name {
+    font-size: 14px;
+  }
+}
 .button--active {
   background-color: red;
+}
+
+.wrapper-hero {
+  position: relative;
+  width: 100%;
+  background-color: #ECF7F3;
+  overflow: hidden;
+}
+.wrapper-hero--js-toggle {
+  display: none;
 }
 
 .hero {
@@ -196,12 +278,15 @@
   background: #ecf7f3;
   padding-bottom: 44px;
   padding: 42px 0px 44px 0px;
-  min-height: 557px;
+}
+@media only screen and (max-width: 373px) {
+  .hero {
+    padding: 20px 0px;
+  }
 }
 .hero__inner {
   max-width: 1173px;
   width: 100%;
-  min-height: 800px;
   padding: 0 30px;
   margin: 0 auto;
   display: flex;
@@ -242,7 +327,13 @@
 }
 @media only screen and (max-width: 574px) {
   .hero__title {
-    font-size: 38px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__title {
+    font-size: 24px;
   }
 }
 .hero__text {
@@ -261,6 +352,12 @@
 @media only screen and (max-width: 574px) {
   .hero__text {
     font-size: 14px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__text {
+    font-size: 10px;
+    line-height: 20px;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -292,6 +389,11 @@
   outline: none;
   border: none;
 }
+@media only screen and (max-width: 373px) {
+  .hero__search {
+    padding: 0px 3px 0px 20px;
+  }
+}
 .hero__search::-moz-placeholder {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -315,6 +417,17 @@
   line-height: 19px;
   letter-spacing: 0.01em;
   color: #a2a2a2;
+}
+@media only screen and (max-width: 373px) {
+  .hero__search::-moz-placeholder {
+    font-size: 12px;
+  }
+  .hero__search:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .hero__search::placeholder {
+    font-size: 12px;
+  }
 }
 .hero__search-prompt {
   color: red;
@@ -379,6 +492,16 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media only screen and (max-width: 574px) {
+  .hero__items-right {
+    height: 437px;
+  }
+}
+@media only screen and (max-width: 373px) {
+  .hero__items-right {
+    height: 300px;
+  }
 }
 .hero__img {
   position: absolute;
@@ -481,7 +604,7 @@
 .flag-india-small-right {
   position: absolute;
   right: 30%;
-  top: 40%;
+  bottom: 10%;
   -webkit-animation-name: india-small-right;
           animation-name: india-small-right;
   -webkit-animation-delay: 2s;
@@ -513,7 +636,7 @@
 .flag-italy-top {
   position: absolute;
   left: 40%;
-  top: 30%;
+  top: 40%;
   -webkit-animation-name: italy-top;
           animation-name: italy-top;
   -webkit-animation-delay: 1.2s;
@@ -525,11 +648,16 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+@media only screen and (max-width: 373px) {
+  .flag-italy-top {
+    left: 25%;
+  }
+}
 
 .flag-italy-bottom {
   position: absolute;
   left: 40%;
-  bottom: 30%;
+  bottom: 20%;
   -webkit-animation-name: italy-bottom;
           animation-name: italy-bottom;
   -webkit-animation-delay: 2.4s;
@@ -540,6 +668,11 @@
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+@media only screen and (max-width: 373px) {
+  .flag-italy-bottom {
+    left: 25%;
+  }
 }
 
 .flag-india-big {
@@ -563,7 +696,7 @@
     left: 30%;
   }
   100% {
-    left: -45px;
+    left: -40px;
     top: 50%;
   }
 }
@@ -573,8 +706,28 @@
     left: 30%;
   }
   100% {
-    left: -45px;
+    left: -40px;
     top: 50%;
+  }
+}
+@media only screen and (max-width: 373px) {
+  @-webkit-keyframes india-small-left {
+    0% {
+      left: 30%;
+    }
+    100% {
+      left: -30px;
+      top: 60%;
+    }
+  }
+  @keyframes india-small-left {
+    0% {
+      left: 30%;
+    }
+    100% {
+      left: -30px;
+      top: 60%;
+    }
   }
 }
 @-webkit-keyframes britain {
@@ -619,6 +772,26 @@
     }
   }
 }
+@media only screen and (max-width: 373px) {
+  @-webkit-keyframes britain {
+    0% {
+      right: 30%;
+    }
+    100% {
+      left: -60px;
+      top: 5%;
+    }
+  }
+  @keyframes britain {
+    0% {
+      right: 30%;
+    }
+    100% {
+      left: -60px;
+      top: 5%;
+    }
+  }
+}
 @-webkit-keyframes italy-top {
   0% {
     right: 28%;
@@ -642,7 +815,7 @@
     right: 30%;
   }
   100% {
-    right: -28px;
+    right: -35px;
     top: 8%;
   }
 }
@@ -651,7 +824,7 @@
     right: 30%;
   }
   100% {
-    right: -28px;
+    right: -35px;
     top: 8%;
   }
 }
@@ -675,6 +848,26 @@
     }
   }
 }
+@media only screen and (max-width: 373px) {
+  @-webkit-keyframes india-big {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -50px;
+      top: 8%;
+    }
+  }
+  @keyframes india-big {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -50px;
+      top: 8%;
+    }
+  }
+}
 @-webkit-keyframes india-small-right {
   0% {
     right: 30%;
@@ -693,13 +886,33 @@
     top: 50%;
   }
 }
+@media only screen and (max-width: 373px) {
+  @-webkit-keyframes india-small-right {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -30px;
+      top: 60%;
+    }
+  }
+  @keyframes india-small-right {
+    0% {
+      right: 30%;
+    }
+    100% {
+      right: -30px;
+      top: 60%;
+    }
+  }
+}
 @-webkit-keyframes italy-bottom {
   0% {
     right: 28%;
   }
   100% {
     right: 35%;
-    bottom: -55px;
+    bottom: -15%;
   }
 }
 @keyframes italy-bottom {
@@ -708,7 +921,19 @@
   }
   100% {
     right: 35%;
-    bottom: -55px;
+    bottom: -15%;
+  }
+}
+@media only screen and (max-width: 373px) {
+  @-webkit-keyframes italy-bottom {
+    100% {
+      bottom: -30%;
+    }
+  }
+  @keyframes italy-bottom {
+    100% {
+      bottom: -30%;
+    }
   }
 }
 @-webkit-keyframes carousel {

@@ -23,6 +23,17 @@ const promptTextNode = 'Недопустимый символ для ввода'
    promptNode.innerHTML = '';
  }
 }
+// открытие и закрытие бургер меню
+const burgerNode = document.querySelector('.burger')
+const mobMenuNode = document.querySelector('.m-menu')
+const wrapperHeroNode = document.querySelector('.wrapper-hero')
+burgerNode.addEventListener('click', function(){
+       burgerNode.classList.toggle('burger--js-active')
+       mobMenuNode.classList.toggle('m-menu--js-toggle')
+       wrapperHeroNode.classList.toggle('wrapper-hero--js-toggle')
+
+})
+
 
 
 
