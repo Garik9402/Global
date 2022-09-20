@@ -279,7 +279,7 @@ body {
    }
 
    &__inner {
-      max-width: 1173px;
+      max-width: 1233px;
       width: 100%;
       padding: 0 30px;
       margin: 0 auto;
@@ -407,6 +407,7 @@ body {
       position: absolute;
       right: 3px;
       transform: translateY(6%);
+      z-index: 50;
    }
 
 
@@ -518,7 +519,7 @@ body {
       animation-timing-function: linear;
 
       @include mq(xxl) {
-         width: 410px;
+         width: 450px;
       }
 
       @include mq(xxl) {
@@ -684,8 +685,7 @@ body {
    }
 
    100% {
-      left: -28px;
-      animation-delay: 3s;
+      left: -10px;
       top: 5%;
    }
 }
@@ -737,7 +737,7 @@ body {
 
    100% {
 
-      right: -35px;
+      right: -17px;
       top: 8%;
    }
 
@@ -803,6 +803,17 @@ body {
    100% {
       right: 35%;
       bottom: -15%;
+   }
+}
+
+@include mq (md) {
+   @keyframes italy-bottom {
+      0% {}
+
+      100% {
+         bottom: -20%;
+      }
+
    }
 }
 

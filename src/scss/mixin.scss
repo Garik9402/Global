@@ -3,7 +3,7 @@ $breakpoints: (
    "md": 576px,
    "lg": 768px,
    "xl": 992px,
-   "xxl": 1042px,
+   "xxl": 1220px,
 );
 
 @mixin mq($width, $type: max) {
